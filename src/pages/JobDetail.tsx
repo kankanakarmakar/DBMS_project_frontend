@@ -63,7 +63,7 @@ const JobDetailPage = () => {
       setError(null);
 
       try {
-        const res = await axios.get<Job>(`http://localhost:5000/api/micro-job/${encodeURIComponent(id)}`, {
+        const res = await axios.get<Job>(`https://dbms-project-1-beq4.onrender.com/api/micro-job/${encodeURIComponent(id)}`, {
           timeout: 15000,
         });
 
@@ -90,7 +90,7 @@ const JobDetailPage = () => {
           if (err?.response?.status === 404) {
             setError("Job not found.");
           } else {
-            setError("Unable to fetch job details. Please ensure the backend is running and reachable at http://localhost:5000.");
+            setError("Unable to fetch job details. Please ensure the backend is running and reachable at https://dbms-project-1-beq4.onrender.com.");
           }
           setJob(null);
         }
