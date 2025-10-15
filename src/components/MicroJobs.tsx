@@ -220,7 +220,7 @@ export const MicroJobs = ({ userSkills }: MicroJobsProps) => {
 
       setAppliedJobIds((prev) => ({ ...prev, [job.id]: true }));
 
-      const res = await axios.post("http://localhost:5000/api/apply-job", payload, { timeout: 10000 });
+      const res = await axios.post("https://dbms-project-1-beq4.onrender.com/api/apply-job", payload, { timeout: 10000 });
       if (res.data && res.data.success) {
         alert(res.data.message || "Application submitted!");
       } else {
