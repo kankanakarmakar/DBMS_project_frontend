@@ -84,7 +84,7 @@ export const MicroJobs = ({ userSkills }: MicroJobsProps) => {
     setError(null);
 
     try {
-      const res = await axios.get("http://localhost:5000/api/micro-jobs", {
+      const res = await axios.get("/api/micro-jobs", {
         params: {
           skills: skillsParam,
           external: externalEnabled ? "1" : "0",
@@ -151,7 +151,7 @@ export const MicroJobs = ({ userSkills }: MicroJobsProps) => {
 
     const encoded = encodeURIComponent(q);
     // interval 30s; adjust to your SerpApi limits and plan
-    const url = `http://localhost:5000/api/linkedin-stream?q=${encoded}&interval=30&limit=12`;
+    const url = `https://dbms-project-1-beq4.onrender.com/api/linkedin-stream?q=${encoded}&interval=30&limit=12`;
 
     const es = new EventSource(url);
     sseRef.current = es;
