@@ -66,7 +66,7 @@ export const LearningResources = ({ missingSkills }: LearningResourcesProps) => 
       setActiveEmbed(null);
 
       try {
-        const resp = await axios.post("http://localhost:5000/api/resources", {
+        const resp = await axios.post("https://dbms-project-1-beq4.onrender.com/api/resources", {
           topics: missingSkills,
         }, { timeout: 20000 });
         // backend expected to return { results: [{ topic, resources: [...] }, ...] }
